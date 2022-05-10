@@ -21,8 +21,8 @@ public class WorkerTriggerHandler {
 
             // INSERT || UPDATE
             if(
-                (oldMap == null && worker.Date_end_contract__c != null) ||
-                (oldMap != null && worker.Date_end_contract__c != oldMap.get(worker.Id).Date_end_contract__c)
+                (oldMap == null && worker.Contract_end_date__c != null) ||
+                (oldMap != null && worker.Contract_end_date__c != oldMap.get(worker.Id).Contract_end_date__c)
                 ) {
                 workers.add(worker);
             }
