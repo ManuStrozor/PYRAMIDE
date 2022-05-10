@@ -14,8 +14,10 @@ public class BuildingTriggerHandler {
     **/
     public static void checkProductionEngineer(List<Building__c> newList) {
 
+        // List creation to store only buildings without engineer
         List<Building__c> buildingsWithoutEngineer = new List<Building__c>();
 
+        // Loop threw new buildings triggered
         for(Building__c bui : newList) {
 
             if(bui.Production_Engineer__c == null) {
