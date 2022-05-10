@@ -1,9 +1,9 @@
 /**
- * Name : AP01_Worker
- * Author : Thomas BOYER
- * Description : Class used to send emails
- * Modified by : Thomas BOYER
- * Modif Date : 09/05/2022
+ * @name        : AP01_Worker
+ * @author      : Emmanuel Turbet-Delof
+ * @description : Class used to send emails
+ * @modified by : Emmanuel Turbet-Delof
+ * @modified on : 10-05-2022
  */
 public class AP01_Worker {
 
@@ -22,7 +22,7 @@ public class AP01_Worker {
             workerIDs.add(worker.Id);
         }
 
-        for(List<Contact> workersWithOwner : [SELECT Name, Email, Date_init_contract__c, Date_end_contract__c, Owner.Name, Owner.Email FROM Contact WHERE ID IN :workerIDs]) {
+        for(List<Contact> workersWithOwner : [SELECT Name, Email, Contract_start_date__c, Contract_end_date__c, Owner.Name, Owner.Email FROM Contact WHERE ID IN :workerIDs]) {
 
             // Loop over 200 workersWithOwner from SOQL request
             for(Contact worker : workersWithOwner) {
@@ -36,8 +36,8 @@ public class AP01_Worker {
                     worker.Owner.Name,
                     worker.Name,
                     worker.Email,
-                    worker.Date_init_contract__c,
-                    worker.Date_end_contract__c
+                    worker.Contract_start_date__c,
+                    worker.Contract_end_date__c
                 }));
 
                 messages.add(msg);

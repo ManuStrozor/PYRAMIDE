@@ -1,7 +1,7 @@
 /**
  * @name         : AP01_Building
- * @author       : Thomas BOYER
- * @modified by  : Thomas BOYER
+ * @author       : Emmanuel Turbet-Delof
+ * @modified by  : Emmanuel Turbet-Delof
  * @modified on  : 10-05-2022
 **/
 public class AP01_Building {
@@ -9,7 +9,7 @@ public class AP01_Building {
     /**
     * @name     attachEngineer
     * @description Attach an engineer to buildings
-    * @author   Thomas BOYER | 09-05-2022
+    * @author   Emmanuel Turbet-Delof | 10-05-2022
     * @param    ID buildingId
     **/
     public static void attachEngineer(List<Building__c> buildings) {

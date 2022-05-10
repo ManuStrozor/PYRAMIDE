@@ -1,7 +1,7 @@
 /**
  * @name         : BuildingTriggerHandler
- * @author       : Thomas BOYER
- * @modified by  : Thomas BOYER
+ * @author       : Emmanuel Turbet-Delof
+ * @modified by  : Emmanuel Turbet-Delof
  * @modified on  : 10-05-2022
 **/
 public class BuildingTriggerHandler {
@@ -9,7 +9,7 @@ public class BuildingTriggerHandler {
     /**
     * @name checkProductionEngineer
     * @description Check if production engineer exists & attach one to building if not
-    * @author Thomas BOYER | 10-05-2022 
+    * @author Emmanuel Turbet-Delof | 10-05-2022 
     * @param List<Building__c> newList 
     **/
     public static void checkProductionEngineer(List<Building__c> newList) {

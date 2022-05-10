@@ -1,10 +1,10 @@
 /**
- * Name : WorkerTriggerHandler
- * Author : Thomas BOYER
- * Description : Handler that 
- * Modified by : Thomas BOYER
- * Modif Date : 09/05/2022
- */
+ * @name         : WorkerTriggerHandler
+ * @author       : Emmanuel Turbet-Delof
+ * @description  : Handler that 
+ * @modified by  : Emmanuel Turbet-Delof
+ * @modified on  : 10-05-2022
+**/
 public class WorkerTriggerHandler {
     
     /**
@@ -21,8 +21,8 @@ public class WorkerTriggerHandler {
 
             // INSERT || UPDATE
             if(
-                (oldMap == null && worker.Date_end_contract__c != null) ||
-                (oldMap != null && worker.Date_end_contract__c != oldMap.get(worker.Id).Date_end_contract__c)
+                (oldMap == null && worker.Contract_end_date__c != null) ||
+                (oldMap != null && worker.Contract_end_date__c != oldMap.get(worker.Id).Contract_end_date__c)
                 ) {
                 workers.add(worker);
             }
