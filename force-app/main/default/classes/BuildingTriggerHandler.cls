@@ -14,10 +14,10 @@ public class BuildingTriggerHandler {
     **/
     public static void checkProductionEngineer(List<Building__c> newList) {
 
-        // New constructor of buildings
+        // List creation to store only buildings without engineer
         List<Building__c> buildingsWithoutEngineer = new List<Building__c>();
 
-        // Loop for all buildings inside newList
+        // Loop threw new buildings triggered
         for(Building__c bui : newList) {
 
             // if the list of buildings is empty, we add all the list off buildings  
