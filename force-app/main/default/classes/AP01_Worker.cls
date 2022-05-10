@@ -1,9 +1,9 @@
 /**
- * Name : AP01_Worker
- * Author : Thomas BOYER
- * Description : Class used to send emails
- * Modified by : Thomas BOYER
- * Modif Date : 09/05/2022
+ * @name        : AP01_Worker
+ * @author      : Emmanuel Turbet-Delof
+ * @description : Class used to send emails
+ * @modified by : Thomas BOYER
+ * @modified on : 10-05-2022
  */
 public class AP01_Worker {
 

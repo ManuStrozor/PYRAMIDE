@@ -1,10 +1,10 @@
 /**
- * Name : WorkerTriggerHandler
- * Author : Thomas BOYER
- * Description : Handler that 
- * Modified by : Thomas BOYER
- * Modif Date : 09/05/2022
- */
+ * @name         : WorkerTriggerHandler
+ * @author       : Emmanuel Turbet-Delof
+ * @description  : Handler that 
+ * @modified by  : Thomas BOYER
+ * @modified on  : 10-05-2022
+**/
 public class WorkerTriggerHandler {
     
     /**
