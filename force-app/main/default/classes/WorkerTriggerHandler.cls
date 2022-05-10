@@ -1,8 +1,8 @@
 /**
  * Name : WorkerTriggerHandler
- * Author : Emmanuel Turbet-Delof
+ * Author : Thomas BOYER
  * Description : Handler that 
- * Modified by : Emmanuel Turbet-Delof
+ * Modified by : Thomas BOYER
  * Modif Date : 09/05/2022
  */
 public class WorkerTriggerHandler {
@@ -21,8 +21,8 @@ public class WorkerTriggerHandler {
 
             // INSERT || UPDATE
             if(
-                (oldMap == null && worker.Contract_end_date__c != null) ||
-                (oldMap != null && worker.Contract_end_date__c != oldMap.get(worker.Id).Contract_end_date__c)
+                (oldMap == null && worker.Date_end_contract__c != null) ||
+                (oldMap != null && worker.Date_end_contract__c != oldMap.get(worker.Id).Date_end_contract__c)
                 ) {
                 workers.add(worker);
             }

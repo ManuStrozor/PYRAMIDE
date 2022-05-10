@@ -1,7 +1,7 @@
 /**
  * @name         : BuildingTrigger
- * @author       : Emmanuel Turbet-Delof
- * @modified by  : Emmanuel Turbet-Delof
+ * @author       : Thomas BOYER
+ * @modified by  : Thomas BOYER
  * @modified on  : 10-05-2022
 **/
 trigger BuildingTrigger on Building__c (before insert) {

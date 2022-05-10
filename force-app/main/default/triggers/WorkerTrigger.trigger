@@ -1,8 +1,8 @@
 /**
  * Name : WorkerTrigger
- * Author : Emmanuel Turbet-Delof
+ * Author : Thomas BOYER
  * Description : Triggered when the Worker record is created or Contract_end_date Field is modified
- * Modified by : Emmanuel Turbet-Delof
+ * Modified by : Thomas BOYER
  * Modif Date : 09/05/2022
  */
 trigger WorkerTrigger on Contact (after insert, after update) {
