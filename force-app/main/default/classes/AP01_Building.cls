@@ -18,18 +18,19 @@ public class AP01_Building {
         //
         // Schema.SObjectType.Account.getRecordTypeInfosByDeveloperName() -->
         // Map<
-        //      DeveloperName,
+        //      DeveloperName ('Personal'),
         //      RecordTypeInfos (class) { getRecordTypeId() }
         //    >
         ID personalRecordTypeID = Schema.SObjectType.Account.getRecordTypeInfosByDeveloperName().get(Label.personalRecordType).getRecordTypeId();
 
-        // Insert a brand new Engineer in Database
+        // Create a new empty object Engineer (personal) with Name = 'Auto Created Engineer'
         Account engineer = new Account(Name = Label.autoCreatedEngineerName, RecordTypeId = personalRecordTypeID);
+        // Insert Engineer in database
         insert engineer;
 
         for (Building__c building : buildings) {
 
-            // Change Production Engineer value of the building
+            // Charge Production_Engineer value with previously inserted Engineer's Id
             building.Production_Engineer__c = engineer.Id;
         }
     }
