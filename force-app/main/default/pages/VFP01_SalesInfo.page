@@ -6,13 +6,17 @@
   @modified on  : 11-05-2022
 -->
 <apex:page standardController="Customer__c" extensions="CustomerDisplayPurchasesHeld_CX" lightningStylesheets="true">
-    <apex:pageBlock title="Number of sold apartments : {!total} - Sum of sold amount : {!totalAmount}">
-        <apex:pageBlockTable var="cust" value="{!results}">
-            <apex:column headerValue="Name" value="{!cust.Firstname__c} {!cust.Name}" />
-            <apex:column value="{!cust.Apartment_number_Purchased__c}" />
-            <apex:column value="{!cust.Purchase_date__c}" />
-            <apex:column value="{!cust.Building__c}" />
-            <apex:column value="{!cust.Amount_paid__c}" />
-        </apex:pageBlockTable>
-    </apex:pageBlock>
+    <apex:form>
+        <apex:pageBlock title="Number of sold apartments : {!total} - Sum of sold amount : {!totalAmount}">
+            <apex:pageBlockTable var="cust" value="{!results}">
+                <apex:column headerValue="Name">
+                    <apex:commandLink action="/{!cust.Id}" value="{!cust.Firstname__c} {!cust.Name}" />
+                </apex:column>
+                <apex:column value="{!cust.Apartment_number_Purchased__c}" />
+                <apex:column value="{!cust.Purchase_date__c}" />
+                <apex:column value="{!cust.Building__c}" />
+                <apex:column value="{!cust.Amount_paid__c}" />
+            </apex:pageBlockTable>
+        </apex:pageBlock>
+    </apex:form>
 </apex:page>

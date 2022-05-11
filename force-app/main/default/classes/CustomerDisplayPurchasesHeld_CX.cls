@@ -1,5 +1,5 @@
 /**
- * @name         : 
+ * @name         : CustomerDisplayPurchasesHeld_CX
  * @description  : 
  * @author       : Emmanuel Turbet-Delof
  * @modified by  : Emmanuel Turbet-Delof
@@ -40,4 +40,5 @@ public with sharing class CustomerDisplayPurchasesHeld_CX {
         }
         private set;
     }
+
 }
