@@ -29,4 +29,15 @@ public with sharing class CustomerDisplayPurchasesHeld_CX {
         }
         private set;
     }
+
+    public Double totalAmount {
+        get {
+            Double sum = 0;
+            for(Customer__c cust : results) {
+                sum += cust.Amount_paid__c;
+            }
+            return sum;
+        }
+        private set;
+    }
 }
