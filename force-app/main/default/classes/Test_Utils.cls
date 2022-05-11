@@ -46,6 +46,27 @@ private class Test_Utils {
     }
 
     @isTest
+    private static void insertWorkerNoEndDate() {
+        
+        Contact worker = new Contact(Lastname = 'Test worker', Contract_start_date__c = Date.today() + 5);
+
+        System.assertNotEquals(null, worker);
+
+        // Perform the test
+        Test.startTest();
+        insert(worker);
+        Test.stopTest();
+
+        // Check the result
+        Contact workerRes = [SELECT Lastname, Contract_start_date__c, Contract_end_date__c FROM Contact WHERE ID = :worker.Id];
+        System.assertNotEquals(null, workerRes);
+        System.assertEquals(Date.today() + 5, workerRes.Contract_start_date__c);
+        System.assertEquals(null, workerRes.Contract_end_date__c);
+
+        System.assertEquals(false, AP01_Worker.emailSuccess);
+    }
+
+    @isTest
     private static void updateWorker() {
         
         List<Contact> workersList = [SELECT Lastname, Contract_end_date__c FROM Contact];
