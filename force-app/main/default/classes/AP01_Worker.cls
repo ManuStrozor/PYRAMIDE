@@ -2,10 +2,12 @@
  * @name        : AP01_Worker
  * @author      : Emmanuel Turbet-Delof
  * @description : Class used to send emails
- * @modified by : Thomas BOYER
+ * @modified by : Emmanuel Turbet-Delof
  * @modified on : 10-05-2022
  */
 public class AP01_Worker {
+
+    public static Boolean emailSuccess = false;
 
     /**
      * sendEmails - send emails to the contact owner of all the workers
@@ -46,7 +48,12 @@ public class AP01_Worker {
 
         // Send all the messages
         if(messages.size() > 0) {
-            Messaging.sendEmail(messages);
+            try {
+                Messaging.sendEmail(messages);
+                emailSuccess = true;
+            } catch(Exception e) {
+                emailSuccess = false;
+            }
         }
     }
 }
