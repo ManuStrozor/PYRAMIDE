@@ -3,7 +3,7 @@
   @description  : 
   @author       : Emmanuel Turbet-Delof
   @modified by  : Emmanuel Turbet-Delof
-  @modified on  : 11-05-2022
+  @modified on  : 12-05-2022
 -->
 <apex:page standardController="Customer__c" recordSetVar="customer" lightningStylesheets="true">
     <apex:variable value="{!0}" var="total" />
@@ -19,20 +19,19 @@
             <apex:pageBlockTable var="cust" value="{!customer}">
                 <apex:column headerValue="Name">
                     <apex:commandLink action="/{!cust.Id}" value="{!cust.Firstname__c} {!cust.Name}" />
+                    <apex:variable var="total" value="{!total + 1}" />
                 </apex:column>
                 <apex:column value="{!cust.Apartment_number_Purchased__c}" />
                 <apex:column value="{!cust.Purchase_date__c}" />
                 <apex:column value="{!cust.Building__c}" />
                 <apex:column headerValue="Paid Amount">
                     <apex:outputField value="{!cust.Amount_paid__c}" />
-                    <apex:variable var="total" value="{!total + 1}" />
                     <apex:variable var="totalAmount" value="{!totalAmount + cust.Amount_paid__c}" />
                     <apex:facet name="footer">
                         Total :
                         <span class="totalAmount"></span>
                     </apex:facet>
                 </apex:column>
-
             </apex:pageBlockTable>
         </apex:pageBlock>
     </apex:form>
