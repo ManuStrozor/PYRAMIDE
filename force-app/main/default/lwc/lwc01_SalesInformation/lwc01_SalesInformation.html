@@ -1,0 +1,21 @@
+<!--
+  @name         : 
+  @description  : 
+  @author       : Emmanuel Turbet-Delof
+  @modified by  : Emmanuel Turbet-Delof
+  @modified on  : 12-05-2022
+-->
+<template>
+    <lightning-card title="Sales Information">
+
+        <template if:true={data}>
+            Total of sold apartments : {total}<br>
+            Total amount of sold apartments : {totalAmount}<hr>
+            <lightning-datatable key-field="Id" data={data} columns={columns} default-sort-direction="asc"></lightning-datatable>
+        </template>
+
+        <template if:true={error}>
+            The error is : {error}
+        </template>
+    </lightning-card>
+</template>

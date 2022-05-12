@@ -10,6 +10,7 @@
     <apex:variable value="{!0.00}" var="totalAmount" />
     <apex:form>
         <apex:pageBlock>
+            <h2>Sales Information</h2>
             <b>Total of sold apartments :</b>
             <span class="total"></span>
             <br></br>

@@ -19,7 +19,6 @@ config/
 manifest/
 scripts/
 force-app/main/default/aura/
-force-app/main/default/lwc/
 # Files ...
 .eslintignore
 .forceignore
@@ -27,8 +26,10 @@ force-app/main/default/lwc/
 .prettierrc
 *.json
 *.js
+!lwc*.js
 *.md
 *.xml
+!lwc*.xml
 
 # LWC VSCode autocomplete
 **/lwc/jsconfig.json
