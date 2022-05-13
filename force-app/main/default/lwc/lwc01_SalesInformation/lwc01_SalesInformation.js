@@ -25,18 +25,21 @@ const columns = [
 ];
 
 export default class Lwc01_SalesInformation extends LightningElement {
+    //jshint ignore:start
     data;
     error;
-    total;
     totalAmount;
     columns = columns;
 
     @wire(getCustomers)
+    //jshint ignore:end
     wire_method({error, data}) {
 
         if(data) {
 
             this.data = data.map(rec => {
+
+                this.totalAmount = Number(this.totalAmount | 0) + Number(rec.Amount_paid__c | 0);
 
                 return {
                     id : rec.Id,
@@ -49,20 +52,19 @@ export default class Lwc01_SalesInformation extends LightningElement {
                     paidAmount : rec.Amount_paid__c
                 };
             });
-
-            this.total = data.length;
-            this.totalAmount = 0.0;
-            for(let i in data) {
-                
-                this.totalAmount += data[i].Amount_paid__c;
-            }
-            this.totalAmount = Intl.NumberFormat(LOCALE, { style:'currency', currency:CURRENCY }).format(this.totalAmount);
-
+            
             this.error = undefined;
         }
         else if(error) {
+
+            this.totalAmount = 0;
             this.error = error;
             this.data = undefined;
         }
+    }
+
+    get formatedAmount() {
+
+        return Intl.NumberFormat(LOCALE, { style:'currency', currency:CURRENCY }).format(this.totalAmount);
     }
 }

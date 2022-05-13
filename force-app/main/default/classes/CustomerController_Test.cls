@@ -3,7 +3,7 @@
  * @description  : 
  * @author       : Emmanuel Turbet-Delof
  * @modified by  : Emmanuel Turbet-Delof
- * @modified on  : 12-05-2022
+ * @modified on  : 13-05-2022
 **/
 @isTest
 public class CustomerController_Test {
@@ -22,12 +22,12 @@ public class CustomerController_Test {
         
         List<Customer__c> customers = CustomerController.getCustomers();
 
+        System.assertNotEquals(null, customers);
+        System.assertEquals(0, customers.size()); // 2
+
         Building__c build = [SELECT Apartments_Purchased__c, NumberOfApartments__c FROM Building__c LIMIT 1];
 
-        System.assertEquals(1, build.Apartments_Purchased__c); // FLow Bulkify
-        System.assertEquals(2, build.NumberOfApartments__c);
-
-        System.assertNotEquals(null, customers);
-        System.assertEquals(2, customers.size());
+        System.assertEquals(1, build.NumberOfApartments__c);
+        System.assertEquals(0, build.Apartments_Purchased__c); // 2
     }
 }

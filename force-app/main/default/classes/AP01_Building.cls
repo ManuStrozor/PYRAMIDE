@@ -2,7 +2,7 @@
  * @name         : AP01_Building
  * @author       : Emmanuel Turbet-Delof
  * @modified by  : Emmanuel Turbet-Delof
- * @modified on  : 10-05-2022
+ * @modified on  : 13-05-2022
 **/
 public class AP01_Building {
     
@@ -12,14 +12,14 @@ public class AP01_Building {
     * @author   Emmanuel Turbet-Delof | 10-05-2022
     * @param    ID buildingId
     **/
-    public static void attachEngineer(List<Building__c> buildings) {
+    public static void attachEngineer(List<SObject> buildings) {
 
         // Retrieve The RecordType ID From Schema class
         //
         // Schema.SObjectType.Account.getRecordTypeInfosByDeveloperName() -->
         // Map<
         //      DeveloperName ('Personal'),
-        //      RecordTypeInfos (class) { getRecordTypeId() }
+        //      RecordTypeInfos (Object) { getRecordTypeId() }
         //    >
         ID personalRecordTypeID = Schema.SObjectType.Account.getRecordTypeInfosByDeveloperName().get(Label.personalRecordType).getRecordTypeId();
 
@@ -28,10 +28,10 @@ public class AP01_Building {
         // Insert Engineer in database
         insert engineer;
 
-        for (Building__c building : buildings) {
+        for (SObject building : buildings) {
 
             // Charge Production_Engineer value with previously inserted Engineer's Id
-            building.Production_Engineer__c = engineer.Id;
+            ((Building__c) building).Production_Engineer__c = engineer.Id;
         }
     }
 }

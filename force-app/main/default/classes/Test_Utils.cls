@@ -3,7 +3,7 @@
  * @description  : 
  * @author       : Patrice PIERY
  * @modified by  : Emmanuel Turbet-Delof
- * @modified on  : 12-05-2022
+ * @modified on  : 13-05-2022
 **/
 public class Test_Utils {
 
@@ -89,7 +89,7 @@ public class Test_Utils {
         Building__c building = new Building__c(
             Name = buildName,
             Apartment_price__c = 100000,
-            NumberOfApartments__c = 2,
+            NumberOfApartments__c = 1,
             Village__c = villageId
         );
 

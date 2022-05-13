@@ -2,7 +2,7 @@
  * @name         : BuildingTriggerHandler
  * @author       : Emmanuel Turbet-Delof
  * @modified by  : Emmanuel Turbet-Delof
- * @modified on  : 10-05-2022
+ * @modified on  : 13-05-2022
 **/
 public class BuildingTriggerHandler {
 
@@ -15,7 +15,7 @@ public class BuildingTriggerHandler {
     public static void checkProductionEngineer(List<Building__c> newList) {
 
         // Temp list to store only buildings without engineer
-        List<Building__c> buildingsWithoutEngineer = new List<Building__c>();
+        List<SObject> buildingsWithoutEngineer = new List<SObject>();
 
         // Loop threw new buildings triggered
         for(Building__c bui : newList) {
@@ -28,6 +28,7 @@ public class BuildingTriggerHandler {
 
         // if the temp list is not empty, we attach an engineer to the buildings
         if(buildingsWithoutEngineer.size() > 0) {
+
             AP01_Building.attachEngineer(buildingsWithoutEngineer);
         }
     }
